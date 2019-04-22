@@ -1,58 +1,78 @@
 *{
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-.container{
-  margin: 0 auto;
-}
-
 .bodyHome{
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: gray;
 }
 
-.barra{
-  background-color: #000;
-  width: 100%;
-}
-
-a{
-  color: #fff;
-}
-
-h1{
-  color: #000;
-}
-
-.carousel-item{
-  position: relative;
-}
-
-.carru{
-  position: absolute;
-  color: #fff;
-}
-
-
-/* ------------login---------------*/
-
-.login{
-  background-image: url("../images/fondogris.jpg");
-}
-
-.container{
+.nav-header{
+  background: #725385;
+  border-radius: 25px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  justify-content: flex-end;
+  }
+    .title{
+      margin: 15px;
+      margin-left: 35px;
+      margin-top: 25px;
+      font-family: 'Indie Flower', cursive;
+      color: #FFC82B;
+    }
+      .lista{
+        list-style: none;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+        .item{
+          float: right;
+          display: block;
+          text-decoration: none;
+          font-size: 18px;
+          padding-right: 70px;
+          padding-top: 25px;
+        }
+           .items{
+             color: #FFC82B;;
+           }
+            .carousel{
+             margin-top: 20px;
+            }
+            .carousel-item{
+             overflow: hidden;
+            }
+            h3{
+            position: absolute;
+            color: #FFC82B;
+            text-align: center;
+            }
 
-.titulo{
-  text-align: center;
-}
+/*-----------------media query HOME---------------------------------------------*/
+          @media (min-width: 1200px) {
+            .container{
+              max-width: 100%;
+            }
+
+
+/*--------------------------------login---------------------------------------*/
+
 .login{
-  background-color: white;
-  width: 100%;
-}
-.foot{
-  text-align: center;
-}
+  background-color: gray;
+  }
+  .container-login{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+  }
+    .titulo{
+     text-align: center;
+     }
+      .login{
+       background-color: white;
+       width: 100%;
+       }
+        .foot{
+         text-align: center;
+         }
