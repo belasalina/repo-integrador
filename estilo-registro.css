@@ -3,10 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 }
-body{
-  background-color: grey;
-}
 
+.container{
+  margin: 0 auto;
+}
 .cabecera{
   text-align: center;
 }
