@@ -24,6 +24,10 @@
   </head>
 
   <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="home.php">FREESTYLE</a>
+    </nav>
+
     <div class="cabecera">
       <header>
         <h1>Crea una cuenta</h1>

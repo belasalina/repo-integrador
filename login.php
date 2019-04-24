@@ -27,7 +27,7 @@
            <button type="submit" class="btn btn-success mb-4">Submit</button>
         </form>
       </div>
-      <p class="foot">Aun no estas registrado? <a href="#registro">Registrate Aqui</a></p>
+      <p class="foot">Aun no estas registrado? <a href="registro.php">Registrate Aqui</a></p>
      </div>
    </body>
  </html>
