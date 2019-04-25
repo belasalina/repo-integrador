@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 .navbar-brand{
   list-style-type: none;
   color: #000;
@@ -15,10 +16,13 @@ body{
 }
 .navbar{
   background-color: #725385;
+  margin-bottom: 20px;
 }
-.cabecera{
+h1{
   text-align: center;
+  margin-bottom: 20px;
 }
+
 .container{
   overflow: hidden;
 }
