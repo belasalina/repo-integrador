@@ -86,7 +86,7 @@
           text-align: center;
           border-radius: 25px;
         }
-/*-----------------RESPONSIVE HOME---------------------------------------------*/
+/*-----------------RESPONSIVE HOME ---------------------------------------------*/
           @media (min-width: 1200px) {
             .container{
               max-width: 100%;
