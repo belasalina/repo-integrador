@@ -384,7 +384,7 @@
         <button type="submit" class="btn btn-primary">Registrate</button>
     </form>
       <br>
-      <p>Ya estás registrado? <a href="login.php" style="color: #FFC82B">Iniciar sesión</a></p>
+      <p>Ya estás registrado? <a href="login.php" style="color: blue">Iniciar sesión</a></p>
     </div>
 
       <!-- footer -->

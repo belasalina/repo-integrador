@@ -5,7 +5,7 @@
 }
 
 body{
-  background-color: gray;
+  background-color: lightgrey;
 }
 .container{
   margin: 0 auto;
@@ -45,7 +45,7 @@ body{
          padding-top: 25px;
        }
           .items{
-            color: #FFC82B;;
+            color: #FFC82B;
           }
 
         .navbar{

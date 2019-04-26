@@ -18,19 +18,19 @@
      <div class="container">
        <h1 class="titulo">FREESTYLE</h1>
        <div class="login">
-          <form class="form-inline" action="/action_page.php">
+          <form class="form-inline" action="/action_page.php" id="loginPadre">
                <label for="usuario" class="mb-4 mr-sm-4">Usuario:</label>
                  <input type="text" class="form-control mb-4 mr-sm-4" id="usuario" placeholder="Introduce tu Usuario" name="usuario">
                <label for="pass" class="mb-4 mr-sm-4">Contraseña:</label>
-                 <input type="text" class="form-control mb-4 mr-sm-4" id="pass" placeholder="Introduce tu Contraseña" name="pass">
+                 <input type="password" class="form-control mb-4 mr-sm-4" id="pass" placeholder="Introduce tu Contraseña" name="pass">
             <div class="form-check mb-4 mr-sm-4">
                <label class="form-check-label">
                  <input type="checkbox" class="form-check-input" name="remember"> Recordar mi usuario
                </label>
            </div>
-           <button type="submit" class="btn btn-success mb-4">Submit</button>
+           <button type="submit" class="btn btn-success mb-4">Ingresar</button>
         </form>
-      </div>
+      </div class="linkRegistro">
       <p class="foot">Aún no estas registrado? <a href="registro.php">Registrate Aquí</a></p>
      </div>
    </body>

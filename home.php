@@ -17,7 +17,7 @@
 
       <!-- barra de navegacion -->
       <header class="main-header">
-         <nav class="nav-header">
+           <nav class="nav-header">
            <div class="title">
             <h1 class="titleF">F R E E S T Y L E</h1>    <!--TITULO-->
            </div>

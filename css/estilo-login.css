@@ -13,6 +13,16 @@ body{
 }
 .container{
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#loginPadre{
+  display: flex;
+  flex-direction: column;
+}
+.foot{
+  text-align: center;
 }
 .navbar{
   background-color: #725385;
