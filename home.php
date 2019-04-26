@@ -42,12 +42,13 @@
         </ul>
 
   <!-- The slideshow --> <!--     Aqui se agregan las imagenes para el carrusel-->
-        <div class="carousel-inner">
+        <div class="carousel-inner" id="zz">
           <div class="carousel-item active">
             <section class="its">
               <div class="texto">
-                <h3 class="carru">"Compartí lo que quieras"</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3 class="carru">"Compartí lo que quieras"</h3><br><br>
+                    <h5>Subi tus mejores fotos, videos...</h5>
+                    <h5>y tus MEMES tambien!</h5>
               </div>
               <div class="imgns">
                 <img src="images/redSocial2.png" alt="seriescompartir" width="700px" height="500px">
@@ -57,8 +58,9 @@
           <div class="carousel-item">
             <section class="its">
               <div class="texto">
-                <h3 class="carru">"Categorias Personalizadas"</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3 class="carru">"Categorias Personalizadas"</h3><br><br>
+                <h5>Conoce gente que comparte tus gustos</h5>
+                <h5>e intereses!  </h5>
               </div>
               <div class="imgns">
                 <img src="images/categorias.png" alt="cat" width="700px" height="500px">
@@ -68,8 +70,9 @@
           <div class="carousel-item">
              <section class="its">
               <div class="texto">
-                <h3 class="carru">"Libre de Comentarios Negativos"</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3 class="carru">"Libre de Comentarios Negativos"</h3><br><br>
+                <h5>Cansado de haters???</h5>
+                <h5>Comparti tranquilo, nadie te comentara nada!</h5>
               </div>
               <div class="imgns">
                 <img src="images/respeto.jpg" alt="respeto" width="700px" height="500px">
@@ -86,16 +89,12 @@
           <span class="carousel-control-next-icon"></span>
         </a>
       </div>
-      <!-- texto solo para pantalla mobile -->
-   <div class="texto-resp">
-     <h3 class="carru">Compartí contenido!</h3>
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-   </div>
+    </div>
 
    <!--- -   footer ----------------->
 
    <div class="foot">
-     <footer>© 2019 Digital House Argentina, Todos los derechos reservados. <a href="tyc" class="items">Términos y Condiciones</a> | <a href="pdp" class="items">Políticas de Privacidad</a></footer>
+     <footer>© 2019 Digital House Argentina, Todos los derechos reservados.<a href="tyc" class="itemsF">Términos y Condiciones</a> | <a href="pdp" class="itemsF">Políticas de Privacidad</a></footer>
    </div>
 
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

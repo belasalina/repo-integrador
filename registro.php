@@ -16,9 +16,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/estilo-registro.css">
     <title>FREESTYLE | REGISTRO </title>
   </head>
@@ -27,10 +30,10 @@
     <header class="main-header">
        <nav class="nav-header">
          <div class="title">
-          <h1 class="titleF"><a href="home.php" style="color: #FFC82B"> F R E E S T Y L E</a></h1>    <!--TITULO-->
+          <h1 class="titleF"><a href="home.php" id="free">F R E E S T Y L E</a></h1>    <!--TITULO-->
          </div>
          <ul class="lista">
-           <li class="item"><a class="items" href="registro.php">REGISTRATE!</a></li>
+           <li class="item"><a class="items" href="home.php">HOME</a></li>
            <li class="item"><a class="items" href="login.php">LOGIN</a></li>
          </ul>
        </nav>
@@ -365,10 +368,10 @@
                 </div>
               </section>
               <section class="int-group">
-                <div class="group">                  
+                <div class="group">
                   <input class="cb" type="checkbox" name="interes" value="comics"> Manga/anime
                 </div>
-                <div class="group">                  
+                <div class="group">
                   <input class="cb" type="checkbox" name="interes" value="libros"> Literatura
                 </div>
                 <div class="group">
@@ -381,7 +384,7 @@
 
         <!-- Boton registro -->
 
-        <button type="submit" class="btn btn-primary">Registrate</button>
+        <button type="submit" class="btn btn-primary boton">Registrate</button>
     </form>
       <br>
       <p>Ya estás registrado? <a href="login.php" style="color: blue">Iniciar sesión</a></p>

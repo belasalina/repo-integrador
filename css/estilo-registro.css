@@ -3,7 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+ul{
+  list-style-type: none;
+}
 body{
   background-color: lightgrey;
 }
@@ -28,6 +30,13 @@ body{
      margin-left: 35px;
      margin-top: 25px;
      font-family: 'Indie Flower', cursive;
+     color: #FFC82B;
+   }
+   #free{
+     color: #FFC82B;
+   }
+   a:hover{
+     text-decoration: none;
      color: #FFC82B;
    }
      .lista{
@@ -87,8 +96,6 @@ body{
         }
 
 
-
-
         @media (max-width: 780px) {
         .container{
             max-width: 100%;
@@ -110,4 +117,7 @@ body{
          flex-direction: column;
          align-items: center;
          border-color: #FFC82B;
+        }
+        .boton{
+          width: 100%;
         }
