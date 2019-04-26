@@ -1,5 +1,5 @@
 <?php
-  include "validaciones.php";
+  include "validaciones.php"; //Revisar validaciones, no imprime errores de registro.
   $errores = [];
   $nameOk = "";
 
