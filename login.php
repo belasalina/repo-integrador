@@ -7,11 +7,15 @@
    <head>
      <meta charset="utf-8">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <link rel="stylesheet" href="css/styles.css">
+     <link rel="stylesheet" href="css/estilo-login.css">
      <title>FREESTYLE | LOG IN</title>
    </head>
    <body class="login">
-     <div class="containerLogin">
+     <nav class="navbar">
+       <a class="navbar-brand" href="home.php">FREESTYLE</a>
+     </nav>
+
+     <div class="container">
        <h1 class="titulo">FREESTYLE</h1>
        <div class="login">
           <form class="form-inline" action="/action_page.php">
@@ -27,7 +31,7 @@
            <button type="submit" class="btn btn-success mb-4">Submit</button>
         </form>
       </div>
-      <p class="foot">Aun no estas registrado? <a href="#registro">Registrate Aqui</a></p>
+      <p class="foot">Aún no estas registrado? <a href="registro.php">Registrate Aquí</a></p>
      </div>
    </body>
  </html>

@@ -1,0 +1,24 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.navbar-brand{
+  list-style-type: none;
+  color: #000;
+}
+body{
+  background-color: lightgrey;
+}
+.container{
+  margin: 0 auto;
+}
+.navbar{
+  background-color: #725385;
+}
+.cabecera{
+  text-align: center;
+}
+.container{
+  overflow: hidden;
+}
