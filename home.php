@@ -41,7 +41,7 @@
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ul>
 
-  <!-- The slideshow --> <!--    Aqui se agregan las imagenes para el carrusel-->
+  <!-- The slideshow --> <!--     Aqui se agregan las imagenes para el carrusel-->
         <div class="carousel-inner">
           <div class="carousel-item active">
             <section class="its">
