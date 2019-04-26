@@ -355,24 +355,24 @@
             </div>
               <section class="int-group">
                 <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="cine"> Peliculas
+                  <input class="cb" type="checkbox" name="interes" value="cine"> Cine/Series
                 </div>
                 <div class="group">
                   <input class="cb" type="checkbox" name="interes" value="videojuegos"> Deportes
                 </div>
                 <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="series"> Musica
+                  <input class="cb" type="checkbox" name="interes" value="musica"> Musica
                 </div>
               </section>
               <section class="int-group">
-                <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="artista"> Lectura
+                <div class="group">                  
+                  <input class="cb" type="checkbox" name="interes" value="comics"> Manga/anime
+                </div>
+                <div class="group">                  
+                  <input class="cb" type="checkbox" name="interes" value="libros"> Literatura
                 </div>
                 <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="comics"> Series
-                </div>
-                <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="musica"> Arte
+                  <input class="cb" type="checkbox" name="interes" value="gamming"> Gamming
                 </div>
               </section>
           </div>

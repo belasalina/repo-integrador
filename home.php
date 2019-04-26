@@ -46,33 +46,33 @@
           <div class="carousel-item active">
             <section class="its">
               <div class="texto">
-                <h3 class="carru">Compartí contenido!</h3>
+                <h3 class="carru">"Compartí lo que quieras"</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
               <div class="imgns">
-                <img src="images/rsocial.jpg" alt="series" width="700px" height="500px">
+                <img src="images/redSocial2.png" alt="seriescompartir" width="700px" height="500px">
               </div>
             </section>
           </div>
           <div class="carousel-item">
             <section class="its">
               <div class="texto">
-                <h3 class="carru">Compartí tus gameplays!</h3>
+                <h3 class="carru">"Categorias Personalizadas"</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
               <div class="imgns">
-                <img src="images/control-videogame.jpg" alt="controls" width="700px" height="500px">
+                <img src="images/categorias.png" alt="cat" width="700px" height="500px">
               </div>
             </section>
           </div>
           <div class="carousel-item">
              <section class="its">
               <div class="texto">
-                <h3 class="carru">Compartí contenido!</h3>
+                <h3 class="carru">"Libre de Comentarios Negativos"</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
               <div class="imgns">
-                <img src="images/events.jpg" alt="eventos" width="700px" height="500px">
+                <img src="images/respeto.jpg" alt="respeto" width="700px" height="500px">
               </div>
             </section>
           </div>
