@@ -19,7 +19,7 @@
       <header class="main-header">
          <nav class="nav-header">
            <div class="title">
-            <h1 class="titleF">F R E E S T Y L E</h1>   <!--TITULO-->
+            <h1 class="titleF">F R E E S T Y L E</h1>    <!--TITULO-->
            </div>
            <ul class="lista">
              <li class="item"><a class="items" href="registro.php">REGISTRATE!</a></li>
