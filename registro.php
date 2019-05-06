@@ -1,14 +1,27 @@
 <?php
-  include "validaciones.php"; //Revisar validaciones, no imprime errores de registro.
+  include "validacionesP.php"; //Revisar validaciones, no imprime errores de registro.
+
   $errores = [];
-  $nameOk = "";
+  $nameOK = "";
+  $lastnameOK = "";
+  $emailOK = "";
 
   if($_POST){
       $errores = validarRegistro($_POST);
-      $nameOk = trim($_POST["name"]);
+
+      $nameOK = trim($_POST['name']);
+      $lastnameOK = trim($_POST['lastname']);
+      $emailOK = trim($_POST['email']);
 
       if(empty($errores)){
-      }
+
+        $usuario = armarUsuario();
+        guardarUsuario($usuario);
+
+        //subir imagen;
+        $ext= pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+        move_uploaded_file($_FILES["avatar"]["tmp_name"], "img/". $_POST["email"]. "." .$ext);
+    }
   }
  ?>
 
@@ -22,7 +35,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/estilo-registro.css">
+    <link rel="stylesheet" href="css/estilo-registroP.css">
     <title>FREESTYLE | REGISTRO </title>
   </head>
 
@@ -47,62 +60,99 @@
     </div>
 
     <div class="container">
-    <form class="formulario" action="index.html" method="post">
-        <ul class="form-group">
-          <?php foreach ($errores as $error): ?>
-            <li><?= $error  ?></li>
-          <?php endforeach; ?>
-        </ul>
+      <ul class="form-group">
+        <?php foreach ($errores as $error): ?>
+          <li><?= $error  ?></li>
+        <?php endforeach; ?>
+      </ul>
+
+    <form class="formulario" action="registroP.php" method="post" enctype="multipart/form-data">
       <div class="form-row align-items-center">
+
         <!-- nombre -->
+
         <div class="col-sm-3 my-1">
           <label for="name" class="mb-4 mr-sm-4"></label>
-          <input type="text" class="form-control" id="name" placeholder="Nombre">
+          <?php if(isset($errores["name"])): ?>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="">
+          <?php else: ?>
+            <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="<?= $nameOK ?>">
+          <?php endif; ?>
         </div>
 
         <!-- Apellido -->
         <div class="col-sm-3 my-1">
           <label for="lastname" class="mb-4 mr-sm-4"></label>
-          <input type="text" class="form-control" id="lastname" placeholder="Apellido">
+          <?php if(isset($errores["lastname"])): ?>
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido">
+          <?php else: ?>
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" value="<?= $lastnameOK ?>">
+          <?php endif; ?>
         </div>
       </div>
 
-        <!-- mail -->
+        <!--email -->
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputEmail4"></label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          <label for="email"></label>
+          <?php if(isset($errores["email"])): ?>
+            <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="Email">
+          <?php else: ?>
+            <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="Email" value="<?= $emailOK ?>">
+          <?php endif; ?>
         </div>
       </div>
 
         <!-- contraseña -->
       <div class="form-row align-items-center">
         <div class="col-sm-3 my-1">
-          <label for="inputPassword4" class="mb-4 mr-sm-4"></label>
-          <input type="password" class="form-control" id="pass1" placeholder="Contraseña">
+          <label for="pass1" class="mb-4 mr-sm-4"></label>
+          <?php if(isset($errores["pass1"])): ?>
+            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Contraseña">
+          <?php else: ?>
+            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Contraseña" value="">
+          <?php endif; ?>
         </div>
+
+          <!-- repetir contraseña -->
         <div class="col-sm-3 my-1">
           <label for="inputPassword4" class="mb-4 mr-sm-4"></label>
-          <input type="password" class="form-control" id="pass2" placeholder="Repetir contraseña">
+          <?php if(isset($errores["pass2"])): ?>
+            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña">
+          <?php else: ?>
+            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña" value="">
+          <?php endif; ?>
         </div>
       </div>
 
         <!-- género -->
         <br>
         <div class="form-check form-check-inline" id="padre">
-          <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="mujer">
+          <?php if(isset($_POST["gender"]) && $_POST["gender"] == "mujer"): ?>
+            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="mujer" checked>
+          <?php else: ?>
+            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="mujer">
+          <?php endif; ?>
           <label class="form-check-label" for="gridCheck">
             Mujer
           </label>
         </div>
         <div class="form-check form-check-inline" id="padre">
-          <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="hombre">
+          <?php if(isset($_POST["gender"]) && $_POST["gender"] == "hombre"): ?>
+            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="hombre" checked>
+          <?php else: ?>
+            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="hombre">
+          <?php endif; ?>
           <label class="form-check-label" for="gridCheck">
             Hombre
           </label>
         </div>
         <div class="form-check form-check-inline" id="padre">
-          <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="otro">
+          <?php if(isset($_POST["gender"]) && $_POST["gender"] == "otro"): ?>
+            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="otro" checked>
+          <?php else: ?>
+            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="otro">
+          <?php endif; ?>
           <label class="form-check-label" for="gridCheck">
             Otro
           </label>
