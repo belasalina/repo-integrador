@@ -1,5 +1,10 @@
 <?php
-  include "validacionesP.php"; //Revisar validaciones, no imprime errores de registro.
+  include "validaciones.php";
+
+  if (usuarioLogueado()) {
+    header("Location: home.php");
+    exit;
+  }
 
   $errores = [];
   $nameOK = "";
@@ -18,9 +23,12 @@
         $usuario = armarUsuario();
         guardarUsuario($usuario);
 
-        //subir imagen;
-        $ext= pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
-        move_uploaded_file($_FILES["avatar"]["tmp_name"], "img/". $_POST["email"]. "." .$ext);
+              //subir imagen//
+        // $ext= pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+        // move_uploaded_file($_FILES["avatar"]["tmp_name"], "img/". $_POST["email"]. "." .$ext);
+
+        header("location:home.php");
+        exit;
     }
   }
  ?>
@@ -35,7 +43,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/estilo-registroP.css">
+    <link rel="stylesheet" href="css/estilo-registro.css">
     <title>FREESTYLE | REGISTRO </title>
   </head>
 
@@ -66,7 +74,7 @@
         <?php endforeach; ?>
       </ul>
 
-    <form class="formulario" action="registroP.php" method="post" enctype="multipart/form-data">
+    <form class="formulario" action="registro.php" method="post" enctype="multipart/form-data">
       <div class="form-row align-items-center">
 
         <!-- nombre -->
@@ -106,11 +114,11 @@
         <!-- contraseña -->
       <div class="form-row align-items-center">
         <div class="col-sm-3 my-1">
-          <label for="pass1" class="mb-4 mr-sm-4"></label>
-          <?php if(isset($errores["pass1"])): ?>
-            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Contraseña">
+          <label for="pass" class="mb-4 mr-sm-4"></label>
+          <?php if(isset($errores["pass"])): ?>
+            <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña">
           <?php else: ?>
-            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Contraseña" value="">
+            <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña" value="">
           <?php endif; ?>
         </div>
 
@@ -129,9 +137,9 @@
         <br>
         <div class="form-check form-check-inline" id="padre">
           <?php if(isset($_POST["gender"]) && $_POST["gender"] == "mujer"): ?>
-            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="mujer" checked>
+            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="mujer" checked>
           <?php else: ?>
-            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="mujer">
+            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="mujer">
           <?php endif; ?>
           <label class="form-check-label" for="gridCheck">
             Mujer
@@ -139,9 +147,9 @@
         </div>
         <div class="form-check form-check-inline" id="padre">
           <?php if(isset($_POST["gender"]) && $_POST["gender"] == "hombre"): ?>
-            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="hombre" checked>
+            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="hombre" checked>
           <?php else: ?>
-            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="hombre">
+            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="hombre">
           <?php endif; ?>
           <label class="form-check-label" for="gridCheck">
             Hombre
@@ -149,9 +157,9 @@
         </div>
         <div class="form-check form-check-inline" id="padre">
           <?php if(isset($_POST["gender"]) && $_POST["gender"] == "otro"): ?>
-            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="otro" checked>
+            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="otro" checked>
           <?php else: ?>
-            <input class="form-check-input" name="gender" type="checkbox" id="gridCheck" value="otro">
+            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="otro">
           <?php endif; ?>
           <label class="form-check-label" for="gridCheck">
             Otro
@@ -408,24 +416,59 @@
             </div>
               <section class="int-group">
                 <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="cine"> Cine/Series
+                  <?php if (isset($_POST["interes"]) && isset($_POST["interes"]["cine"])):  ?>
+                    <input class="cb" type="checkbox" name="interes[cine]" value="cine" checked>
+                  <?php else: ?>
+                    <input class="cb" type="checkbox" name="interes[cine]" value="cine">
+                  <?php endif; ?>
+                  <label class="form-check-label" for="inlineCheckbox1">Cine/Series</label>
                 </div>
+
                 <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="videojuegos"> Deportes
+                  <?php if (isset($_POST["interes"]) && isset($_POST["interes"]["deportes"])):  ?>
+                    <input class="cb" type="checkbox" name="interes[deportes]" value="deportes" checked> Deportes
+                  <?php else: ?>
+                    <input class="cb" type="checkbox" name="interes[deportes]" value="deportes">
+                  <?php endif; ?>
+                  <label class="form-check-label" for="inlineCheckbox1">Deportes</label>
                 </div>
+
                 <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="musica"> Musica
+                  <?php if (isset($_POST["interes"]) && isset($_POST["interes"]["musica"])):  ?>
+                    <input class="cb" type="checkbox" name="interes[musica]" value="musica" checked>
+                  <?php else: ?>
+                    <input class="cb" type="checkbox" name="interes[musica]" value="musica">
+                  <?php endif; ?>
+                  <label class="form-check-label" for="inlineCheckbox1">Musica</label>
                 </div>
               </section>
+
               <section class="int-group">
                 <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="comics"> Manga/anime
+                  <?php if (isset($_POST["interes"]) && isset($_POST["interes"]["anime"])):  ?>
+                    <input class="cb" type="checkbox" name="interes[anime]" value="anime" checked>
+                  <?php else: ?>
+                    <input class="cb" type="checkbox" name="interes[anime]" value="anime">
+                  <?php endif; ?>
+                  <label class="form-check-label" for="inlineCheckbox1">Manga/anime</label>
                 </div>
+
                 <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="libros"> Literatura
+                  <?php if (isset($_POST["interes"]) && isset($_POST["interes"]["literatura"])):  ?>
+                    <input class="cb" type="checkbox" name="interes[literatura]" value="literatura" checked> Literatura
+                  <?php else: ?>
+                    <input class="cb" type="checkbox" name="interes[literatura]" value="literatura">
+                  <?php endif; ?>
+                  <label class="form-check-label" for="inlineCheckbox1">Literatura</label>
                 </div>
+
                 <div class="group">
-                  <input class="cb" type="checkbox" name="interes" value="gamming"> Gamming
+                  <?php if (isset($_POST["interes"]) && isset($_POST["interes"]["gamming"])):  ?>
+                    <input class="cb" type="checkbox" name="interes[gamming]" value="gamming" checked>
+                  <?php else: ?>
+                    <input class="cb" type="checkbox" name="interes[gamming]" value="gamming">
+                  <?php endif; ?>
+                  <label class="form-check-label" for="inlineCheckbox1">Gamming</label>
                 </div>
               </section>
           </div>

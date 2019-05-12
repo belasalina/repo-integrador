@@ -1,4 +1,27 @@
 <?php
+  require_once "validaciones.php";
+
+  if (usuarioLogueado()) {
+    header("Location: inicio.php");
+    exit;
+  }
+
+  $errores = [];
+
+  if ($_POST) {
+    $errores = validarLogin($_POST);
+    $usuarioOK = trim($_POST["email"]);
+
+    if (empty($errores)) {
+      loguearUsuario($_POST["email"]);
+      var_dump($_SESSION);
+
+      header("Location: inicio.php");
+      exit;
+    }
+  }
+
+
 
  ?>
 
@@ -18,11 +41,24 @@
      <div class="container">
        <h1 class="titulo">FREESTYLE</h1>
        <div class="login">
-          <form class="form-inline" action="/action_page.php" id="loginPadre">
-               <label for="usuario" class="mb-4 mr-sm-4">Usuario:</label>
-                 <input type="text" class="form-control mb-4 mr-sm-4" id="usuario" placeholder="Introduce tu Usuario" name="usuario">
+          <form class="form-inline" action="login.php" method="POST" enctype="multipart/form-data" id="loginPadre">
+
+                <!-- usuario -->
+
+               <label for="email" class="mb-4 mr-sm-4">Usuario:</label>
+                 <input type="email" class="form-control mb-4 mr-sm-4" id="usuario" placeholder="Introduce tu Usuario" name="email" value="">
+              <?php if(isset($errores["email"])): ?>
+                <span class="small text-danger"><?= $errores["email"] ?></span>
+              <?php endif; ?>
+
+                <!-- contraseña -->
+
                <label for="pass" class="mb-4 mr-sm-4">Contraseña:</label>
                  <input type="password" class="form-control mb-4 mr-sm-4" id="pass" placeholder="Introduce tu Contraseña" name="pass">
+              <?php if(isset($errores["pass"])): ?>
+                 <span class="small text-danger"><?= $errores["pass"] ?></span>
+               <?php endif; ?>
+
             <div class="form-check mb-4 mr-sm-4">
                <label class="form-check-label">
                  <input type="checkbox" class="form-check-input" name="remember"> Recordar mi usuario

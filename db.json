@@ -1,0 +1,20 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Robert",
+            "apellido": "Castellanos",
+            "email": "rcastellanos2007@gmail.com",
+            "pass": "$2y$10$\/lxH1r6gCZjNx2T.LnRzK.ErbvQb8hkb70Th7HU0ZnUaKfRPizY1i",
+            "genero": "hombre"
+        },
+        {
+            "id": 2,
+            "nombre": "anye",
+            "apellido": "rodriguex",
+            "email": "anyecastellans06@hotmail.com",
+            "pass": "$2y$10$80hmGcLYueby\/atFm7cfYOAMK5tfe1.93zD0d8eYjToGWsJdD32T.",
+            "genero": "mujer"
+        }
+    ]
+}
