@@ -15,10 +15,12 @@
 
   }
   .nav-header{
-  background: #725385;
-  border-radius: 25px;
-  display: flex;
-  justify-content: space-between;
+    background: #ad5389;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
   }
     .title{
       margin: 15px;
@@ -88,7 +90,9 @@
                   }
         footer{
           padding: 30px;
-          background-color: #725385;
+          background: #ad5389;  /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
           color: #FFC82B;
           text-align: center;
           border-radius: 25px;
