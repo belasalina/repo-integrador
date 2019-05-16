@@ -66,7 +66,7 @@ function validarRegistro($datos){
       // intereses
 
       if(!isset($datos["interes"])){
-        $errores["interes"] = "Decinos al menos un interes";
+        $errores["interes"] = "Por favor elija al menos un interes";
       }
 
 return $errores;

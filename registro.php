@@ -68,11 +68,6 @@
     </div>
 
     <div class="container">
-      <ul class="form-group">
-        <?php foreach ($errores as $error): ?>
-          <li><?= $error  ?></li>
-        <?php endforeach; ?>
-      </ul>
 
     <form class="formulario" action="registro.php" method="post" enctype="multipart/form-data">
       <div class="form-row align-items-center">
@@ -148,7 +143,6 @@
         <div class="form-check form-check-inline" id="padre">
           <?php if(isset($_POST["gender"]) && $_POST["gender"] == "hombre"): ?>
             <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="hombre" checked>
-          </label>
           <?php else: ?>
             <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="hombre">
           <?php endif; ?>
@@ -167,6 +161,10 @@
             Otro
           </label>
         </div>
+        <?php if(isset($errores["gender"])): ?>
+                <span class="small text-danger"><?= $errores["gender"] ?></span>
+              <?php endif; ?>
+
 
           <!-- seleccion de pais -->
 
@@ -410,6 +408,7 @@
             </select>
           </div>
 
+
         <!-- interses -->
 
         <div class="registro-intereses">
@@ -473,6 +472,10 @@
                   <label class="form-check-label" for="inlineCheckbox1">Gamming</label>
                 </div>
               </section>
+              <?php if(isset($errores["interes"])): ?>
+                <span class="small text-danger"><?= $errores["interes"] ?></span>
+              <?php endif; ?>
+
           </div>
         <br>
         <br>
