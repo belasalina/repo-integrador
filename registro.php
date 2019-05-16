@@ -82,7 +82,7 @@
         <div class="col-sm-3 my-1">
           <label for="name" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["name"])): ?>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="">
+            <input type="text" class="form-control" id="name" name="name" placeholder="<?= $errores["name"]?>" value=""style="border: 2px solid red;">
           <?php else: ?>
             <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="<?= $nameOK ?>">
           <?php endif; ?>
@@ -92,7 +92,7 @@
         <div class="col-sm-3 my-1">
           <label for="lastname" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["lastname"])): ?>
-            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido">
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="<?= $errores["lastname"]?>" value=""style="border: 2px solid red;">
           <?php else: ?>
             <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" value="<?= $lastnameOK ?>">
           <?php endif; ?>
@@ -104,7 +104,7 @@
         <div class="form-group col-md-6">
           <label for="email"></label>
           <?php if(isset($errores["email"])): ?>
-            <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="Email">
+            <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="<?= $errores["email"]?>"value=""style="border: 2px solid red;">
           <?php else: ?>
             <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="Email" value="<?= $emailOK ?>">
           <?php endif; ?>
@@ -116,7 +116,7 @@
         <div class="col-sm-3 my-1">
           <label for="pass" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["pass"])): ?>
-            <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña">
+            <input type="password" class="form-control" id="pass" name="pass" placeholder="<?= $errores["pass"]?>"value=""style="border: 2px solid red;">
           <?php else: ?>
             <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña" value="">
           <?php endif; ?>
@@ -126,7 +126,7 @@
         <div class="col-sm-3 my-1">
           <label for="inputPassword4" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["pass2"])): ?>
-            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña">
+            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="<?= $errores["pass"]?>"value=""style="border: 2px solid red;">
           <?php else: ?>
             <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña" value="">
           <?php endif; ?>
@@ -148,11 +148,13 @@
         <div class="form-check form-check-inline" id="padre">
           <?php if(isset($_POST["gender"]) && $_POST["gender"] == "hombre"): ?>
             <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="hombre" checked>
+          </label>
           <?php else: ?>
             <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="hombre">
           <?php endif; ?>
           <label class="form-check-label" for="gridCheck">
             Hombre
+
           </label>
         </div>
         <div class="form-check form-check-inline" id="padre">
