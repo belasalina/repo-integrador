@@ -19,14 +19,13 @@
       $emailOK = trim($_POST['email']);
 
       if(empty($errores)){
-
         $usuario = armarUsuario();
         guardarUsuario($usuario);
 
-
         $ext= pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
         move_uploaded_file($_FILES["avatar"]["tmp_name"], "images/". $_POST["email"]. "." .$ext);
-        header("location:home.php");
+        loguearUsuario($_POST["email"]);
+        header("location: inicio.php");
         exit;
     }
   }
@@ -69,13 +68,13 @@
     <div class="container">
     <section class="formulario">
 
-    <form class="formu" action="registro.php" method="post" enctype="multipart/form-data">
+    <form class="formu" action="registro.php" method="post" enctype="multipart/form-data" style="width: 60%">
       <div class="form-row align-items-center">
 
         <!-- nombre -->
 
-        <div class="col-sm-3 md-1">
-          <label for="name" class="mb-4 mr-sm-4"></label>
+        <div class="col-sm-6 col-md-6 col-xl-6">
+          <label for="name" class="mb-4 mr-sm-6"></label>
           <?php if(isset($errores["name"])): ?>
             <input type="text" class="form-control" id="name" name="name" placeholder="<?= $errores["name"]?>" value=""style="border: 2px solid red;">
           <?php else: ?>
@@ -84,10 +83,10 @@
         </div>
 
         <!-- Apellido -->
-        <div class="col-sm-3 md-1">
+        <div class="col-sm-6 col-md-6 col-xl-6">
           <label for="lastname" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["lastname"])): ?>
-            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="<?= $errores["lastname"]?>" value=""style="border: 2px solid red;">
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="<?= $errores["lastname"]?>" value="" style="border: 2px solid red;">
           <?php else: ?>
             <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" value="<?= $lastnameOK ?>">
           <?php endif; ?>
@@ -96,10 +95,10 @@
 
         <!--email -->
       <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12 col-xl-12">
           <label for="email"></label>
           <?php if(isset($errores["email"])): ?>
-            <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="<?= $errores["email"]?>"value=""style="border: 2px solid red;">
+            <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="<?= $errores["email"]?>" value="" style="border: 2px solid red;">
           <?php else: ?>
             <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="Email" value="<?= $emailOK ?>">
           <?php endif; ?>
@@ -108,7 +107,7 @@
 
         <!-- contraseña -->
       <div class="form-row align-items-center">
-        <div class="col-sm-3 md-1">
+        <div class="col-sm-6 col-md-6 col-xl-6">
           <label for="pass" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["pass"])): ?>
             <input type="password" class="form-control" id="pass" name="pass" placeholder="<?= $errores["pass"]?>"value=""style="border: 2px solid red;">
@@ -118,7 +117,7 @@
         </div>
 
           <!-- repetir contraseña -->
-        <div class="col-sm-3 md-1">
+        <div class="col-sm-6 col-md-6 col-xl-6">
           <label for="inputPassword4" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["pass2"])): ?>
             <input type="password" class="form-control" id="pass2" name="pass2" placeholder="<?= $errores["pass"]?>"value=""style="border: 2px solid red;">
@@ -129,44 +128,47 @@
       </div><br>
 
         <!-- avatar -->
-        <div class="subir">
-          <label for="avatar">Agrega una imagen de perfil</label>
-          <input type="file" name="avatar" class="form-control" style="width: 550px">
+        <div class="form-row">
+          <div class="col-sm-12 col-md-12 col-xl-12">
+            <label for="avatar">Agrega una imagen de perfil</label>
+            <input type="file" name="avatar" class="form-control" style="padding-top: 0px; padding-left: 0px; padding-bottom: 0px; height: 32px;">
+          </div>
         </div>
-        
+
 
         <!-- género -->
         <br>
         <div class="form-check form-check-inline" id="padre">
-          <?php if(isset($_POST["gender"]) && $_POST["gender"] == "mujer"): ?>
-            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="mujer" checked>
-          <?php else: ?>
-            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="mujer">
-          <?php endif; ?>
-          <label class="form-check-label" for="gridCheck">
-            Mujer
-          </label>
-        </div>
-        <div class="form-check form-check-inline" id="padre">
-          <?php if(isset($_POST["gender"]) && $_POST["gender"] == "hombre"): ?>
-            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="hombre" checked>
-          <?php else: ?>
-            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="hombre">
-          <?php endif; ?>
-          <label class="form-check-label" for="gridCheck">
-            Hombre
-
-          </label>
-        </div>
-        <div class="form-check form-check-inline" id="padre">
-          <?php if(isset($_POST["gender"]) && $_POST["gender"] == "otro"): ?>
-            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="otro" checked>
-          <?php else: ?>
-            <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="otro">
-          <?php endif; ?>
-          <label class="form-check-label" for="gridCheck">
-            Otro
-          </label>
+          <div class="" style="text-align: center">
+            <?php if(isset($_POST["gender"]) && $_POST["gender"] == "mujer"): ?>
+              <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="mujer" checked>
+            <?php else: ?>
+              <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="mujer">
+            <?php endif; ?>
+            <label class="form-check-label" for="gridCheck">
+              Mujer
+            </label>
+          </div>
+          <div class="">
+            <?php if(isset($_POST["gender"]) && $_POST["gender"] == "hombre"): ?>
+              <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="hombre" checked>
+            <?php else: ?>
+              <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="hombre">
+            <?php endif; ?>
+            <label class="form-check-label" for="gridCheck">
+              Hombre
+            </label>
+          </div>
+          <div class="">
+            <?php if(isset($_POST["gender"]) && $_POST["gender"] == "otro"): ?>
+              <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="otro" checked>
+            <?php else: ?>
+              <input class="form-check-input" name="gender" type="radio" id="gridCheck" value="otro">
+            <?php endif; ?>
+            <label class="form-check-label" for="gridCheck">
+              Otro
+            </label>
+          </div>
         </div>
         <?php if(isset($errores["gender"])): ?>
                 <span class="small text-danger"><?= $errores["gender"] ?></span>
@@ -493,7 +495,7 @@
         </form>
         </section>
         <br>
-        <p>Ya estás registrado? <a href="login.php" style="color: blue">Iniciar sesión</a></p>
+        <p style="text-align: center">Ya estás registrado? <a href="login.php" style="color: blue">Iniciar sesión</a></p>
     </div>
 
       <!-- footer -->

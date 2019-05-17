@@ -72,6 +72,12 @@ body{
 #loginPadre{
   display: flex;
   flex-direction: column;
+  margin: 25px 0;
+}
+.campo{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 .pregunta-reg{
   text-align: center;
@@ -87,5 +93,3 @@ body{
   text-align: center;
   border-radius: 25px;
 }
-
-

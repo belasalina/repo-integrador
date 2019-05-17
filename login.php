@@ -10,7 +10,7 @@
     $usuarioOK = trim($_POST["email"]);
     if (empty($errores)) {
       loguearUsuario($_POST["email"]);
-      var_dump($_SESSION);
+
       header("Location: inicio.php");
       exit;
     }
@@ -43,27 +43,29 @@
           <form id="loginPadre"class="form-inline" action="login.php" method="POST" enctype="multipart/form-data">
 
               <!-- usuario -->
-
+            <div class="campo">
               <label for="email" class="mb-4 mr-sm-4">Usuario:</label>
                  <input type="email" class="form-control mb-4 mr-sm-4" id="usuario" placeholder="Introduce tu Usuario" name="email" value="">
                   <?php if(isset($errores["email"])): ?>
                   <span class="small text-danger"><?= $errores["email"] ?></span>
                   <?php endif; ?>
-
+            </div>
               <!-- contraseña -->
-
+            <div class="campo">
               <label for="pass" class="mb-4 mr-sm-4">Contraseña:</label>
                  <input type="password" class="form-control mb-4 mr-sm-4" id="pass" placeholder="Introduce tu Contraseña" name="pass">
                   <?php if(isset($errores["pass"])): ?>
                   <span class="small text-danger"><?= $errores["pass"] ?></span>
                   <?php endif; ?>
-
-              <div class="form-check mb-4 mr-sm-4">
+            </div>
+              <div class="form-check mb-4 mr-sm-4 campo">
                 <label class="form-check-label">
                  <input type="checkbox" class="form-check-input" name="remember"> Recordar mi usuario
                 </label>
               </div>
-              <button type="submit" class="btn btn-success mb-4">Ingresar</button>
+              <div class="campo">
+                <button type="submit" class="btn btn-success mb-4">Ingresar</button>
+              </div>
           </form>
         </div>
         <p class="pregunta-reg">Aún no estas registrado? <a href="registro.php">Registrate Aquí</a></p>

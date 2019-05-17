@@ -16,23 +16,23 @@ function validarRegistro($datos){
   // Errores de Nombre
 
     if(strlen($datoFinal["name"]) == 0){
-      $errores["name"] = "Complete el campo nombre.";
+      $errores["name"] = "Por favor complete el campo nombre.";
     } elseif(ctype_alpha($datoFinal["name"]) == false){
-      $errores["name"] = "Nombre debe contener sólo letras";
+      $errores["name"] = "El nombre debe contener sólo letras";
     }
 
   // Errores Apellido
 
     if(strlen($datoFinal["lastname"]) == 0){
-      $errores["lastname"] = "Complete el campo Apellido.";
+      $errores["lastname"] = "Por favor complete el campo Apellido.";
     } elseif (ctype_alpha($datoFinal["lastname"]) == false){
-      $errores["lastname"] = "Apellido debe contener sólo letras";
+      $errores["lastname"] = "El apellido debe contener sólo letras";
     }
 
   // Errores mail
 
     if (strlen($datoFinal["email"]) == 0){
-      $errores["email"] = "Complete el campo Email.";
+      $errores["email"] = "Por favor complete el campo Email.";
     } elseif (!filter_var($datoFinal["email"], FILTER_VALIDATE_EMAIL)) {
       $errores["email"] = "Ingrese un formato de email válido.";
     }
@@ -40,19 +40,19 @@ function validarRegistro($datos){
   // Errores contraseña //
 
     if(strlen($datoFinal["pass"]) == 0){
-      $errores["pass"] = "Contraseña no puede estar vacío.";
+      $errores["pass"] = "El campo contraseña no puede estar vacío.";
     } elseif (strlen($datoFinal["pass"]) < 8) {
       $errores["pass"] = "La Contraseña debe tener al menos 8 caracteres";
     } elseif (!preg_match('`[a-z]`',$datoFinal["pass"])) {    //valida que contenga al menos una minuscula//
-      $errores["pass"] = "Contraseña debe contener al menos una minuscula";
+      $errores["pass"] = "La Contraseña debe contener al menos una minuscula";
     } elseif (!preg_match('`[A-Z]`',$datoFinal["pass"])){     //valida que contenga al menos una mayuscula//
-      $errores["pass"] = "Contraseña debe contener al menos una mayuscula";
+      $errores["pass"] = "La Contraseña debe contener al menos una mayuscula";
     }
 
     // repetir contraseña //
 
      if(strlen($datoFinal["pass2"]) == 0){
-      $errores["pass2"] = "Repita su contraseña.";
+      $errores["pass2"] = "Por favor repita su contraseña.";
     } elseif($datoFinal["pass"] !== $datoFinal["pass2"]){
       $errores["pass"] = "Las contraseñas no coinciden.";
     }
@@ -66,7 +66,7 @@ function validarRegistro($datos){
       // intereses
 
       if(!isset($datos["interes"])){
-        $errores["interes"] = "Por favor elija al menos un interes";
+        $errores["interes"] = "Decinos al menos un interes";
       }
 
 return $errores;
@@ -114,7 +114,6 @@ function guardarUsuario($usuario){
   } else {
     $json = file_get_contents("db.json");
   }
-
   $array = json_decode($json, true);
   $array["usuarios"][] = $usuario;  // se agrega usuario al array
   $array = json_encode($array, JSON_PRETTY_PRINT);
@@ -127,7 +126,7 @@ function buscarUsuarioPorMail($email){
   $json = file_get_contents("db.json");
   $array = json_decode($json, true);
 
-  foreach ($array["usuarios"] as $usuario) {
+  foreach($array["usuarios"] as $usuario){
     if($usuario["email"] == $email){
       return $usuario;
     }
