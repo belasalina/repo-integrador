@@ -36,40 +36,40 @@
            <li class="item"><a class="items" href="registro.php">REGISTER</a></li>
          </ul>
        </nav>
-     </header>
+    </header>
 
      <div class="container">
        <div class="login">
-          <form class="form-inline" action="login.php" method="POST" enctype="multipart/form-data" id="loginPadre">
+          <form id="loginPadre"class="form-inline" action="login.php" method="POST" enctype="multipart/form-data">
 
-                <!-- usuario -->
+              <!-- usuario -->
 
-               <label for="email" class="mb-4 mr-sm-4">Usuario:</label>
+              <label for="email" class="mb-4 mr-sm-4">Usuario:</label>
                  <input type="email" class="form-control mb-4 mr-sm-4" id="usuario" placeholder="Introduce tu Usuario" name="email" value="">
-              <?php if(isset($errores["email"])): ?>
-                <span class="small text-danger"><?= $errores["email"] ?></span>
-              <?php endif; ?>
+                  <?php if(isset($errores["email"])): ?>
+                  <span class="small text-danger"><?= $errores["email"] ?></span>
+                  <?php endif; ?>
 
-                <!-- contraseña -->
+              <!-- contraseña -->
 
-               <label for="pass" class="mb-4 mr-sm-4">Contraseña:</label>
+              <label for="pass" class="mb-4 mr-sm-4">Contraseña:</label>
                  <input type="password" class="form-control mb-4 mr-sm-4" id="pass" placeholder="Introduce tu Contraseña" name="pass">
-              <?php if(isset($errores["pass"])): ?>
-                 <span class="small text-danger"><?= $errores["pass"] ?></span>
-               <?php endif; ?>
+                  <?php if(isset($errores["pass"])): ?>
+                  <span class="small text-danger"><?= $errores["pass"] ?></span>
+                  <?php endif; ?>
 
-            <div class="form-check mb-4 mr-sm-4">
-               <label class="form-check-label">
+              <div class="form-check mb-4 mr-sm-4">
+                <label class="form-check-label">
                  <input type="checkbox" class="form-check-input" name="remember"> Recordar mi usuario
-               </label>
-           </div>
-           <button type="submit" class="btn btn-success mb-4">Ingresar</button>
-        </form>
-      </div class="linkRegistro">
-      <p class="pregunta-reg">Aún no estas registrado? <a href="registro.php">Registrate Aquí</a></p>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-success mb-4">Ingresar</button>
+          </form>
+        </div>
+        <p class="pregunta-reg">Aún no estas registrado? <a href="registro.php">Registrate Aquí</a></p>
      </div>
-     <div class="foot">
-     <footer>© 2019 Digital House Argentina, Todos los derechos reservados.<a href="tyc" class="itemsF">Términos y Condiciones</a> | <a href="pdp" class="itemsF">Políticas de Privacidad</a></footer>
-   </div>
+    <div class="foot">
+      <footer>© 2019 Digital House Argentina, Todos los derechos reservados.<a href="tyc" class="itemsF">Términos y Condiciones</a> | <a href="pdp" class="itemsF">Políticas de Privacidad</a></footer>
+    </div>
    </body>
  </html>
