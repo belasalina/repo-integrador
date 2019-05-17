@@ -67,8 +67,9 @@
     </div>
 
     <div class="container">
+    <section class="formulario">
 
-    <form class="formulario" action="registro.php" method="post" enctype="multipart/form-data">
+    <form class="formu" action="registro.php" method="post" enctype="multipart/form-data">
       <div class="form-row align-items-center">
 
         <!-- nombre -->
@@ -132,11 +133,7 @@
           <label for="avatar">Agrega una imagen de perfil</label>
           <input type="file" name="avatar" class="form-control" style="width: 550px">
         </div>
-        <!-- <div class="perfil">
-          <label for="avatar">Agrega una imagen de perfil</label>
-          <input type="file" id="" class="avatar" name="avatar">
-          <span class="small text-danger"></span>
-        </div> -->
+        
 
         <!-- género -->
         <br>
@@ -494,6 +491,7 @@
 
         <button type="submit" class="btn btn-primary boton">Registrate</button>
         </form>
+        </section>
         <br>
         <p>Ya estás registrado? <a href="login.php" style="color: blue">Iniciar sesión</a></p>
     </div>
