@@ -1,6 +1,11 @@
 <?php
 require 'validaciones.php';
 
+if (usuarioLogueado()) {
+  header("Location: inicio.php");
+  exit;
+}
+
 $usuario = traerUsuarioLogueado();
 $usuarioLogueado = usuarioLogueado();
  ?>

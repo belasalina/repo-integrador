@@ -2,7 +2,7 @@
   include "validaciones.php";
 
   if (usuarioLogueado()) {
-    header("Location: home.php");
+    header("Location: inicio.php");
     exit;
   }
 
