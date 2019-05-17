@@ -102,6 +102,7 @@ function armarUsuario(){
     "email" => trim($_POST["email"]),
     "pass" => password_hash($_POST["pass"], PASSWORD_DEFAULT),
     "genero" => trim($_POST["gender"]),
+    "avatar" => "images/". $_POST["email"]."." .$ext,
   ];
 }
 

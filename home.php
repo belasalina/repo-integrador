@@ -1,5 +1,8 @@
 <?php
+require 'validaciones.php';
 
+$usuario = traerUsuarioLogueado();
+$usuarioLogueado = usuarioLogueado();
  ?>
 
  <!DOCTYPE html>

@@ -23,10 +23,9 @@
         $usuario = armarUsuario();
         guardarUsuario($usuario);
 
-              //subir imagen//
-        // $ext= pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
-        // move_uploaded_file($_FILES["avatar"]["tmp_name"], "img/". $_POST["email"]. "." .$ext);
 
+        $ext= pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+        move_uploaded_file($_FILES["avatar"]["tmp_name"], "images/". $_POST["email"]. "." .$ext);
         header("location:home.php");
         exit;
     }
@@ -131,7 +130,18 @@
             <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña" value="">
           <?php endif; ?>
         </div>
-      </div>
+      </div><br>
+
+        <!-- avatar -->
+        <div class="subir">
+          <label for="avatar">Agrega una imagen de perfil</label>
+          <input type="file" name="avatar" class="form-control" style="width: 550px">
+        </div>
+        <!-- <div class="perfil">
+          <label for="avatar">Agrega una imagen de perfil</label>
+          <input type="file" id="" class="avatar" name="avatar">
+          <span class="small text-danger"></span>
+        </div> -->
 
         <!-- género -->
         <br>

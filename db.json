@@ -5,16 +5,18 @@
             "nombre": "Robert",
             "apellido": "Castellanos",
             "email": "rcastellanos2007@gmail.com",
-            "pass": "$2y$10$\/lxH1r6gCZjNx2T.LnRzK.ErbvQb8hkb70Th7HU0ZnUaKfRPizY1i",
-            "genero": "hombre"
+            "pass": "$2y$10$9gFZKk9wuvrv8mos4PBJduJFF4IEeueVfwf99QcRbHJFQNGG5ea6u",
+            "genero": "hombre",
+            "avatar": "images\/rcastellanos2007@gmail.com."
         },
         {
             "id": 2,
             "nombre": "anye",
             "apellido": "rodriguex",
-            "email": "anyecastellans06@hotmail.com",
-            "pass": "$2y$10$80hmGcLYueby\/atFm7cfYOAMK5tfe1.93zD0d8eYjToGWsJdD32T.",
-            "genero": "mujer"
+            "email": "carlinrod168@gmail.com",
+            "pass": "$2y$10$DD2R8IPpJeNgMOe5tDQzBu8ZM2C03v9eEOXhd\/m7s2e8S3sUxsqV6",
+            "genero": "hombre",
+            "avatar": "images\/carlinrod168@gmail.com."
         }
     ]
 }
