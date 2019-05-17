@@ -67,31 +67,26 @@
     </div>
 
     <div class="container">
-      <ul class="form-group">
-        <?php foreach ($errores as $error): ?>
-          <li><?= $error  ?></li>
-        <?php endforeach; ?>
-      </ul>
 
     <form class="formulario" action="registro.php" method="post" enctype="multipart/form-data">
       <div class="form-row align-items-center">
 
         <!-- nombre -->
 
-        <div class="col-sm-3 my-1">
+        <div class="col-sm-3 md-1">
           <label for="name" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["name"])): ?>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" value="">
+            <input type="text" class="form-control" id="name" name="name" placeholder="<?= $errores["name"]?>" value=""style="border: 2px solid red;">
           <?php else: ?>
             <input type="text" id="name" class="form-control" placeholder="Nombre" name="name" value="<?= $nameOK ?>">
           <?php endif; ?>
         </div>
 
         <!-- Apellido -->
-        <div class="col-sm-3 my-1">
+        <div class="col-sm-3 md-1">
           <label for="lastname" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["lastname"])): ?>
-            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido">
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="<?= $errores["lastname"]?>" value=""style="border: 2px solid red;">
           <?php else: ?>
             <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" value="<?= $lastnameOK ?>">
           <?php endif; ?>
@@ -103,7 +98,7 @@
         <div class="form-group col-md-6">
           <label for="email"></label>
           <?php if(isset($errores["email"])): ?>
-            <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="Email">
+            <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="<?= $errores["email"]?>"value=""style="border: 2px solid red;">
           <?php else: ?>
             <input type="text" class="form-control" id="inputEmail4" name="email" placeholder="Email" value="<?= $emailOK ?>">
           <?php endif; ?>
@@ -112,20 +107,20 @@
 
         <!-- contraseña -->
       <div class="form-row align-items-center">
-        <div class="col-sm-3 my-1">
+        <div class="col-sm-3 md-1">
           <label for="pass" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["pass"])): ?>
-            <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña">
+            <input type="password" class="form-control" id="pass" name="pass" placeholder="<?= $errores["pass"]?>"value=""style="border: 2px solid red;">
           <?php else: ?>
             <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña" value="">
           <?php endif; ?>
         </div>
 
           <!-- repetir contraseña -->
-        <div class="col-sm-3 my-1">
+        <div class="col-sm-3 md-1">
           <label for="inputPassword4" class="mb-4 mr-sm-4"></label>
           <?php if(isset($errores["pass2"])): ?>
-            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña">
+            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="<?= $errores["pass"]?>"value=""style="border: 2px solid red;">
           <?php else: ?>
             <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña" value="">
           <?php endif; ?>
@@ -163,6 +158,7 @@
           <?php endif; ?>
           <label class="form-check-label" for="gridCheck">
             Hombre
+
           </label>
         </div>
         <div class="form-check form-check-inline" id="padre">
@@ -175,6 +171,10 @@
             Otro
           </label>
         </div>
+        <?php if(isset($errores["gender"])): ?>
+                <span class="small text-danger"><?= $errores["gender"] ?></span>
+              <?php endif; ?>
+
 
           <!-- seleccion de pais -->
 
@@ -418,6 +418,7 @@
             </select>
           </div>
 
+
         <!-- interses -->
 
         <div class="registro-intereses">
@@ -481,6 +482,10 @@
                   <label class="form-check-label" for="inlineCheckbox1">Gamming</label>
                 </div>
               </section>
+              <?php if(isset($errores["interes"])): ?>
+                <span class="small text-danger"><?= $errores["interes"] ?></span>
+              <?php endif; ?>
+
           </div>
         <br>
         <br>
@@ -488,9 +493,9 @@
         <!-- Boton registro -->
 
         <button type="submit" class="btn btn-primary boton">Registrate</button>
-    </form>
-      <br>
-      <p>Ya estás registrado? <a href="login.php" style="color: blue">Iniciar sesión</a></p>
+        </form>
+        <br>
+        <p>Ya estás registrado? <a href="login.php" style="color: blue">Iniciar sesión</a></p>
     </div>
 
       <!-- footer -->

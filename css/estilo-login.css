@@ -4,6 +4,57 @@
   box-sizing: border-box;
 }
 
+.login{
+  margin-top: 59px;
+}
+.main-header{
+  position: fixed;
+  top:0;
+  z-index: 1;
+  width: 100%;
+ }
+ .nav-header{
+  /*color agregado de uigradients*/
+  background: #ad5389;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /*fin del color*/
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+ }
+ .title{
+   margin: 15px;
+   margin-left: 35px;
+   margin-top: 25px;
+   font-family: 'Indie Flower', cursive;
+   color: #FFC82B;
+ }
+ #free{
+   color: #FFC82B;
+ }
+ a:hover{
+   text-decoration: none;
+   color: #FFC82B;
+ }
+   .lista{
+     list-style: none;
+     overflow: hidden;
+     margin-bottom: 15px;
+     margin-top: 10px;
+   }
+     .item{
+       float: right;
+       display: block;
+       text-decoration: none;
+       font-size: 18px;
+       padding-right: 70px;
+       padding-top: 25px;
+     }
+        .items{
+          color: #FFC82B;
+        }
+
 .navbar-brand{
   list-style-type: none;
   color: #000;
@@ -16,23 +67,25 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 #loginPadre{
   display: flex;
   flex-direction: column;
 }
+.pregunta-reg{
+  text-align: center;
+}
 .foot{
+  padding: 30px;
+  /*color agregado de uigradients*/
+  background: #ad5389;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /*fin del color*/
+  color: #FFC82B;
   text-align: center;
-}
-.navbar{
-  background-color: #725385;
-  margin-bottom: 20px;
-}
-h1{
-  text-align: center;
-  margin-bottom: 20px;
+  border-radius: 25px;
 }
 
-.container{
-  overflow: hidden;
-}
+
