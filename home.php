@@ -12,101 +12,91 @@ $usuarioLogueado = usuarioLogueado();
 
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
-   <head>
-     <meta charset="utf-8">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/estilos.css">
-     <title>FREESTYLE | HOME</title>
-   </head>
-   <body class="bodyHome">
-    <div class="container">
+ <head>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/estilos.css">
+   <title>FREESTYLE | HOME</title>
+ </head>
+ <body>
+   <div class="container">
+      <div class="container1">
+         <div class="imagen">
+            <div class="barra row">
+              <div class="free col-md-4">
+                <img src="images/logo5.png" alt="">
+              </div>
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
+                <ul class="lista">
+                  <li class="item btn btn-secondary"><a class="items" href="registro.php">Registrate</a></li>
+                  <li class="item btn btn-secondary"><a class="items" href="login.php">Iniciá Sesión</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="title">
+               <h1>COMPARTI LO QUE QUIERAS CUANDO QUIERAS</h1>
+            </div>
+         </div>
+           <ul class="nav nav-pills nav-justified bg-secondary btn-lg">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Active</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Link</a>
+              </li>
+          </ul>
+       </div>
 
-      <!-- barra de navegacion -->
-      <header class="main-header">
-           <nav class="nav-header">
-           <div class="title">
-            <h1 class="titleF">F R E E S T Y L E</h1>    <!--TITULO-->
+     <div class="container2">
+       <div class="cuerpo row">
+         <div class="article col-md-5 col-sm-8">
+           <div class="foto">
+             <img src="images/rsocial.jpg" alt="" style="width: 350px">
            </div>
-           <ul class="lista">
-             <li class="item"><a class="items" href="registro.php">REGISTER</a></li>
-             <li class="item"><a class="items" href="login.php">LOGIN</a></li>
-           </ul>
-         </nav>
-       </header>
-
-       <!---carrusel--------------->
-
-  <div class="carousel">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-  <!-- Indicators -->
-
-        <ul class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ul>
-
-  <!-- The slideshow --> <!--     Aqui se agregan las imagenes para el carrusel-->
-        <div class="carousel-inner" id="zz">
-          <div class="carousel-item active">
-            <section class="its">
-              <div class="texto">
-                <h3 class="carru">"Compartí lo que quieras"</h3><br><br>
-                    <h5>Subi tus mejores fotos, videos...</h5>
-                    <h5>y tus MEMES tambien!</h5>
-              </div>
-              <div class="imgns">
-                <img src="images/redSocial2.png" alt="seriescompartir" width="700px" height="500px">
-              </div>
-            </section>
+           <div class="txt">
+             <h5>Comparti cualquier tipo de contenido</h5>
+           </div>
+         </div>
+         <div class="article col-md-5 col-sm-8">
+           <div class="foto">
+             <img src="images/like2.png" alt="" style="width: 200px">
+           </div>
+           <div class="txt">
+             <h5>Olvidate de los haters...solo recibi likes!</h5>
+           </div>
+         </div>
+         <div class="article col-md-5 col-sm-8">
+           <div class="foto">
+             <img src="images/chatea3.png" alt="" style="width: 230px">
+           </div>
+           <div class="txt">
+             <h5>Chatea solo con tus amigos</h5>
+           </div>
+         </div>
+         <div class="article col-md-5 col-sm-8">
+            <div class="foto">
+             <img src="images/intereses2.jpg" alt="" style="width: 250px">
+           </div>
+           <div class="txt">
+             <h5>Conoce personas que comparatan tus intereses!</h5>
+           </div>
           </div>
-          <div class="carousel-item">
-            <section class="its">
-              <div class="texto">
-                <h3 class="carru">"Categorias Personalizadas"</h3><br><br>
-                <h5>Conoce gente que comparte tus gustos</h5>
-                <h5>e intereses!  </h5>
-              </div>
-              <div class="imgns">
-                <img src="images/categorias.png" alt="cat" width="700px" height="500px">
-              </div>
-            </section>
-          </div>
-          <div class="carousel-item">
-             <section class="its">
-              <div class="texto">
-                <h3 class="carru">"Libre de Comentarios Negativos"</h3><br><br>
-                <h5>Cansado de haters???</h5>
-                <h5>Comparti tranquilo, nadie te comentara nada!</h5>
-              </div>
-              <div class="imgns">
-                <img src="images/respeto.jpg" alt="respeto" width="700px" height="500px">
-              </div>
-            </section>
-          </div>
-        </div>
-
-  <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev" id="prev">
-          <span class="carousel-control-prev-icon" id="arrow"></span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" data-slide="next" id="next">
-          <span class="carousel-control-next-icon"></span>
-        </a>
-      </div>
-    </div>
-
-   <!--- -   footer ----------------->
-
-   <div class="foot">
-     <footer>© 2019 Digital House Argentina, Todos los derechos reservados.<a href="tyc" class="itemsF">Términos y Condiciones</a> | <a href="pdp" class="itemsF">Políticas de Privacidad</a></footer>
-   </div>
-
+       </div>
+     </div>
+     <div class="foot">
+      <footer>© 2019 Digital House Argentina, Todos los derechos reservados. <a href="tyc" class="itemsF">Términos y Condiciones</a> | <a href="pdp" class="itemsF">Políticas de Privacidad</a></footer>
+     </div>
+  </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-   </body>
- </html>
+ </body>
+</html>
