@@ -6,8 +6,19 @@ if (usuarioLogueado()) {
   exit;
 }
 
-$usuario = traerUsuarioLogueado();
-$usuarioLogueado = usuarioLogueado();
+$errores = [];
+if ($_POST) {
+  $errores = validarLogin($_POST);
+  $usuarioOK = trim($_POST["email"]);
+  if (empty($errores)) {
+    loguearUsuario($_POST["email"]);
+
+    header("Location: inicio.php");
+    exit;
+  }
+}
+// $usuario = traerUsuarioLogueado();
+// $usuarioLogueado = usuarioLogueado();
  ?>
 
  <!DOCTYPE html>
@@ -23,23 +34,54 @@ $usuarioLogueado = usuarioLogueado();
  </head>
  <body>
    <div class="container">
+     <header class="row bg-secondary cabecera">
+       <div class="free col-md-4">
+         <img src="images/logo5.png" alt="logo" style="width: 250px; margin-left: 50px;">
+       </div>
+       <div class="col-md-4">
+       </div>
+       <div class="col-md-3 btn-registro">
+         <ul class="lista">
+           <li class="item text-light">Aun no estas registrado?</li>
+           <li class="item btn btn-primary text-light"><a class="items" href="registro.php">Registrate</a></li>
+         </ul>
+       </div>
+       <div class="col-md-1">
+       </div>
+     </header>
       <div class="container1">
          <div class="imagen">
-            <div class="barra row">
-              <div class="free col-md-4">
-                <img src="images/logo5.png" alt="">
+            <div class="row img-principal">
+              <div class="col-md-8">
+
               </div>
-              <div class="col-md-4">
-              </div>
-              <div class="col-md-4">
-                <ul class="lista">
-                  <li class="item btn btn-secondary"><a class="items" href="registro.php">Registrate</a></li>
-                  <li class="item btn btn-secondary"><a class="items" href="login.php">Iniciá Sesión</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="title">
-               <h1>COMPARTI LO QUE QUIERAS CUANDO QUIERAS</h1>
+              <div class="login col-md-4">
+                 <form id="loginPadre"class="form-inline" action="home.php" method="POST" enctype="multipart/form-data">
+
+                     <!-- usuario -->
+                   <div class="campo">
+                        <input type="email" class="form-control mb-4 mr-sm-4" id="usuario" placeholder="Introduce tu Usuario" name="email" value="">
+                         <?php if(isset($errores["email"])): ?>
+                         <span class="small text-danger"><?= $errores["email"] ?></span>
+                         <?php endif; ?>
+                   </div>
+                     <!-- contraseña -->
+                   <div class="campo">
+                        <input type="password" class="form-control mb-4 mr-sm-4" id="pass" placeholder="Introduce tu Contraseña" name="pass">
+                         <?php if(isset($errores["pass"])): ?>
+                         <span class="small text-danger"><?= $errores["pass"] ?></span>
+                         <?php endif; ?>
+                   </div>
+                     <div class="form-check mb-4 mr-sm-4 campo">
+                       <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="remember"> Recordar mi usuario
+                       </label>
+                     </div>
+                     <div class="campo">
+                       <button type="submit" class="btn btn-success mb-4">Ingresar</button>
+                     </div>
+                 </form>
+               </div>
             </div>
          </div>
            <ul class="nav nav-pills nav-justified bg-secondary btn-lg">

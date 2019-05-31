@@ -1,5 +1,6 @@
 <?php
   include "validaciones.php";
+  include "pdo.php";
 
   if (usuarioLogueado()) {
     header("Location: inicio.php");
@@ -29,6 +30,8 @@
         exit;
     }
   }
+
+
  ?>
 
 <!DOCTYPE html>
