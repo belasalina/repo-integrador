@@ -31,26 +31,104 @@
    section{
      margin-top: 50px;
    }
+   .izquierda{
+     border-right: 2px;
+     border-right-style: solid;
+     border-right-color: lightgrey;
+   }
    .foto{
      width: 100%;
      display: flex;
      justify-content: center;
      align-items: center;
      overflow: hidden;
+     border-radius: 25px;
    }
    .img-perfil{
      display: block;
-     /* width: 200%;
-     height: 250px; */
+
    }
    .informacion{
      display: flex;
      justify-content: center;
    }
+      .centro{
+        display: flex;
+        justify-content: center;
+      }
+      .cuerpo-central{
+        width: 80%;
+      }
+      .id-post{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        /* border-radius: 50%; */
+      }
+      .img-id-post{
+        display: block;
+        padding-right: 0px;
+      }
+      .profile{
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 2px;
+        border-color: green;
 
+      }
+      .nombre-id-post{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 20px;
+      }
+      .time-post{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .post-img{
+        margin-top: 10px;
+      }
+      .principal-post{
+        position: relative;
+      }
+
+      .like-share{
+        align-items: center;
+        background-color: lightgrey;
+        border-radius: 5px;
+        height: 35px;
+      }
+      .likes{
+        padding-left: 100px;
+      }
+      .pie{
+        display: inline;
+        color: steelblue;
+      }
+      a{
+        display: inline;
+        color: steelblue;
+      }
       .post{
         margin-top: 50px;
-        border-bottom: 2px;
-        border-bottom-style: solid;
-        border-bottom-color: lightgrey;
+
+      }
+
+      .derecha{
+        border-left: 2px;
+        border-left-style: solid;
+        border-left-color: lightgrey;
+      }
+      .chat{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin: 10px;
+
       }

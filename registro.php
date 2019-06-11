@@ -1,8 +1,7 @@
 <?php
-  include "validaciones.php";
-  include "pdo.php";
-
-  if (usuarioLogueado()) {
+  include "init.php";
+  
+  if ($auth->usuarioLogueado()) {
     header("Location: inicio.php");
     exit;
   }
@@ -13,19 +12,20 @@
   $emailOK = "";
 
   if($_POST){
-      $errores = validarRegistro($_POST);
+      $errores = Validador::validarRegistro($_POST);
 
       $nameOK = trim($_POST['name']);
       $lastnameOK = trim($_POST['lastname']);
       $emailOK = trim($_POST['email']);
 
       if(empty($errores)){
-        $usuario = armarUsuario();
-        guardarUsuario($usuario);
+        $usuario = new Usuario($_POST);
+        $dbAll->guardarUsuario($usuario);
 
-        $ext= pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+        $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
         move_uploaded_file($_FILES["avatar"]["tmp_name"], "images/". $_POST["email"]. "." .$ext);
-        loguearUsuario($_POST["email"]);
+
+        $auth->loguearUsuario($_POST["email"]);
         header("location: inicio.php");
         exit;
     }

@@ -1,15 +1,17 @@
 <?php
-  require_once "validaciones.php";
-  if (usuarioLogueado()) {
+  include "init.php";
+
+  if ($auth->usuarioLogueado()) {
     header("Location: inicio.php");
     exit;
   }
   $errores = [];
+
   if ($_POST) {
-    $errores = validarLogin($_POST);
+    $errores = Validador::validarLogin($_POST);
     $usuarioOK = trim($_POST["email"]);
     if (empty($errores)) {
-      loguearUsuario($_POST["email"]);
+      $auth->loguearUsuario($_POST["email"]);
 
       header("Location: inicio.php");
       exit;

@@ -1,17 +1,17 @@
 <?php
-require 'validaciones.php';
+require 'init.php';
 
-if (usuarioLogueado()) {
+if ($auth->usuarioLogueado()) {
   header("Location: inicio.php");
   exit;
 }
 
 $errores = [];
 if ($_POST) {
-  $errores = validarLogin($_POST);
+  $errores = Validador::validarLogin($_POST);
   $usuarioOK = trim($_POST["email"]);
   if (empty($errores)) {
-    loguearUsuario($_POST["email"]);
+    $auth->loguearUsuario($_POST["email"]);
 
     header("Location: inicio.php");
     exit;
@@ -50,39 +50,40 @@ if ($_POST) {
        </div>
      </header>
       <div class="container1">
-         <div class="imagen">
-            <div class="row img-principal">
-              <div class="col-md-8">
+        <div class="container-img">
+           <div class="imagen" style="width: 100%;">
+              <div class="row img-principal">
+                <div class="col-md-8">
+                </div>
+                <div class="login col-md-4">
+                   <form id="loginPadre"class="form-inline" action="home.php" method="POST" enctype="multipart/form-data">
 
-              </div>
-              <div class="login col-md-4">
-                 <form id="loginPadre"class="form-inline" action="home.php" method="POST" enctype="multipart/form-data">
-
-                     <!-- usuario -->
-                   <div class="campo">
-                        <input type="email" class="form-control mb-4 mr-sm-4" id="usuario" placeholder="Introduce tu Usuario" name="email" value="">
-                         <?php if(isset($errores["email"])): ?>
-                         <span class="small text-danger"><?= $errores["email"] ?></span>
-                         <?php endif; ?>
-                   </div>
-                     <!-- contraseña -->
-                   <div class="campo">
-                        <input type="password" class="form-control mb-4 mr-sm-4" id="pass" placeholder="Introduce tu Contraseña" name="pass">
-                         <?php if(isset($errores["pass"])): ?>
-                         <span class="small text-danger"><?= $errores["pass"] ?></span>
-                         <?php endif; ?>
-                   </div>
-                     <div class="form-check mb-4 mr-sm-4 campo">
-                       <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="remember"> Recordar mi usuario
-                       </label>
-                     </div>
+                       <!-- usuario -->
                      <div class="campo">
-                       <button type="submit" class="btn btn-success mb-4">Ingresar</button>
+                          <input type="email" class="form-control mb-4 mr-sm-4" id="usuario" placeholder="Introduce tu Usuario" name="email" value="">
+                           <?php if(isset($errores["email"])): ?>
+                           <span class="small text-danger"><?= $errores["email"] ?></span>
+                           <?php endif; ?>
                      </div>
-                 </form>
-               </div>
-            </div>
+                       <!-- contraseña -->
+                     <div class="campo">
+                          <input type="password" class="form-control mb-4 mr-sm-4" id="pass" placeholder="Introduce tu Contraseña" name="pass">
+                           <?php if(isset($errores["pass"])): ?>
+                           <span class="small text-danger"><?= $errores["pass"] ?></span>
+                           <?php endif; ?>
+                     </div>
+                       <div class="form-check mb-4 mr-sm-4 campo">
+                         <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" name="remember"> Recordar mi usuario
+                         </label>
+                       </div>
+                       <div class="campo">
+                         <button type="submit" class="btn btn-success mb-4">Ingresar</button>
+                       </div>
+                   </form>
+                 </div>
+              </div>
+           </div>
          </div>
            <ul class="nav nav-pills nav-justified bg-secondary btn-lg">
               <li class="nav-item">
