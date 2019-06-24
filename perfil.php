@@ -1,8 +1,8 @@
 <?php
-require 'validaciones.php';
+require 'init.php';
 
-$usuario = traerUsuarioLogueado();
-$usuarioLogueado = usuarioLogueado();
+$usuario = $dbAll->traerUsuarioLogueado();
+$usuarioLogueado = $auth->usuarioLogueado();
 
 ?>
 
@@ -17,35 +17,68 @@ $usuarioLogueado = usuarioLogueado();
     <title>FREESTYLE | PERFIL</title>
   </head>
   <body>
-    <header class="row perfil bg-secondary">
-      <div class="col-sx-12">
-        <div class="center-block">
-          <h1>Mi Perfil</h1>
+    <header class="row bg-secondary cabecera">
+      <div class="free col-md-4">
+      <?php if ($auth->usuarioLogueado()): ?>
+        <a href="inicio.php"><img src="images/logo5.png" alt="logo" style="width: 250px; margin-left: 30px;"></a>
+      <?php else: ?>
+        <a href="home.php"><img src="images/logo5.png" alt="logo" style="width: 250px; margin-left: 30px;"></a>
+      <?php endif; ?>
+      </div>
+      <div class="bienvenido col-md-4 text-light">
+        <?php if ($auth->usuarioLogueado()): ?>
+            <?php if ($usuario->getGender() == "mujer"): ?>
+             <h5><?= "Bienvenida ". $usuario->getName() . "!"?></h5>
+           <?php elseif ($usuario->getGender() == "hombre"):?>
+             <h5><?= "Bienvenido ". $usuario->getName() . "!"?></h5>
+           <?php else: ?>
+             <h5><?= "Bienvenid@ ". $usuario->getName() . "!"?></h5>
+           <?php endif; ?>
+        <?php endif; ?>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <div class="salir col-md-3">
+        <div class="">
+          <?php if ($auth->usuarioLogueado()): ?>
+            <a class="boton btn btn-danger btn-lg" href="logout.php">Salir</a>
+          <?php else: ?>
+            <a class="boton btn btn-success btn-lg" href="home.php">Ingresar</a>
+          <?php endif; ?>
         </div>
       </div>
     </header>
     <div class="container">
       <div class="row  foto-perfil">
-        <div class="col-xs-12 text-center">
-            <?php if (usuarioLogueado()): ?>
-                <img class="avatar" src="images/<?= $usuario["avatar"] ?>" alt="perfil" style="width: 400px;">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+            <div class="uno">
+            <?php if ($auth->usuarioLogueado()): ?>
+                <img class="avatar" src="images/<?= $usuario->getAvatar() ?>" alt="perfil" style="width: 400px;">
               <?php else: ?>
                 <img class="avatar" src="images/perfil-anonimo.jpg" alt="perfil" style="width: 400px;">
               <?php endif; ?>
+            </div>
+            <div class="dos">
+              <ul>
+                <li><strong>Nombre:</strong>  <?=  $usuario->getName() ?></li>
+                <li><strong>Apellido:</strong>  <?=  $usuario->getLastname() ?></li>
+                <li><strong>Email:</strong>  <?=  $usuario->getEmail() ?></li>
+                <li><strong>Genero:</strong>  <?=  $usuario->getGender() ?></li>
+              </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+
         </div>
       </div>
       <div class="">
         <a href="inicio.php">Volver a Inicio</a>
       </div>
       <div class="row lista-info">
-        <div class="col-xs-12 text-center">
-          <ul>
-            <li><strong>Nombre:</strong>  <?=  $usuario["nombre"] ?></li>
-            <li><strong>Apellido:</strong>  <?=  $usuario["apellido"] ?></li>
-            <li><strong>Email:</strong>  <?=  $usuario["email"] ?></li>
-            <li><strong>Genero:</strong>  <?=  $usuario["genero"] ?></li>
-          </ul>
-        </div>
+
       </div>
     </div>
   </body>
